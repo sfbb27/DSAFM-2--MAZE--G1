@@ -1,0 +1,108 @@
+#include <iostream>
+#include <conio.h>
+#include <stack>
+#include <queue>
+#include <climits>
+#include <cstring>
+
+using namespace std;
+
+
+// M x N matrix
+#define M 21
+#define N 14 
+
+/* // queue node used in BFS
+
+struct Node 
+{
+    // (x, y) represents matrix cell coordinates
+    // dist represent its minimum distance from the source
+    int x, y, dist;
+};
+ 
+// Below arrays details all 4 possible movements from a cell
+int row[] = { -1, 0, 0, 1 };
+int col[] = { 0, -1, 1, 0 };
+ 
+// Function to check if it is possible to go to position (row, col) 
+// from current position. The function returns false if (row, col) 
+// is not a valid position or has value 0 or it is already visited
+bool isValid(int mat[][N], bool visited[][N], int row, int col)
+{
+    return (row >= 0) && (row < M) && (col >= 0) && (col < N) 
+        && mat[row][col] && !visited[row][col];
+}
+ 
+// Find Shortest Possible Route in a matrix mat from source 
+// cell (i, j) to destination cell (x, y)
+void BFS(int mat[][N], int i, int j, int x, int y);
+
+*/
+
+int main()
+ 
+ {
+ 	int value;
+ 	int choice;
+ 		
+ 	system("color f2");
+ 	
+	cout << "\t\t_____________________________________________________\n"<< endl   /* welcome screen*/
+         << "\t\t"<< " *****  WELCOME TO MAZE MAINIA  *****"  << endl           
+         << "\t\t__________________________________________________\n\n" << endl;
+		
+	cout << "\t\t\t -_-_-_-_--_-_-_-_-_-_-_-_-_-_-_-_\n"<<endl;
+	cout<< " \t\t\t -_-_ BELOW ARE YOUR OPTIONS-_-_-_\n";
+	cout << "\t\t\t -_-_-_-_--_-_-_-_-_-_-_-_-_-_-_-_\n"<<endl<<endl;
+				
+	//Displays the types of Data structure
+	cout<<"\t\t	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"<<endl;
+	cout<<"\t\t\t         Press 1 Room  1:  "<<endl;
+	cout<<"\t\t\t         Press 2 Room  3   "<<endl;
+	cout<<"\t\t\t         Press 3 Room  5:  "<<endl;
+	cout<<"\t\t\t         Press 4 Room  6:  "<<endl;
+	cout<<"\t\t\t         Press 5 Room  7:  "<<endl;
+	cout<<"\t\t\t         Press 6 Room  8:  "<<endl;
+	cout<<"\t\t\t         Press 7 Exit:  "<<endl;
+	cout<<"\t\t	^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"<<endl;
+	cin>>choice;//Accept users input	
+	cout<<endl;
+	
+	system("cls");
+	
+	cout<<"\n \n You have selected option number:  "<<choice<<endl<<endl;
+	
+	///*
+	
+	// Shortest path in a Maze
+
+    // input maze
+    string mat[M][N] =
+    {
+        { 1, 1, 1, 1, 1, 0, 0, 1, 1, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, 1, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, "R1", 1, 1, 1, 1,0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1},
+        { 1, 0, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, 0, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, 0, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, 1, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { "R1", 1, 1, 1, 1, 1, 0, 1, 0,1,1, 1, 1, 1, 1, 0, 0, 1, 1,1 },
+        { 1, 1, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, 0, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, 0, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, 1, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+        { 1, "R1", 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1,1 },
+        { 1, 1, 1, 1, 1, 1, 0, 1, 0, 1,1, 1, 1, 1, 1, 0, 0, 1, 1, 1 },
+ 
+        
+        {
+    };
+ 
+    // Find shortest path from source (0, 0) to
+    // destination (7, 5)
+    BFS(mat, 0, 0, 7, 5);
+ 
+    return 0;
+
+}
